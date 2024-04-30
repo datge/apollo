@@ -23,13 +23,13 @@ export type ClientConfig = {
    * See https://www.apollographql.com/docs/link/links/http.html#options
    * @type {HttpOptions}
    **/
-  httpLinkOptions?: Omit<HttpOptions, 'uri'>;
+  httpLinkOptions?: Omit<HttpOptions, "uri">;
 
   /**
    * Provide additional configuration for the `GraphQLWsLink`.
    * See https://github.com/enisdenjo/graphql-ws/blob/master/docs/interfaces/client.ClientOptions.md
    **/
-  wsLinkOptions?: Omit<ClientOptions, 'url' | 'connectionParams'>;
+  wsLinkOptions?: Omit<ClientOptions, "url" | "connectionParams">;
 
   /**
    * Specify a websocket endpoint to be used for subscriptions.
@@ -80,7 +80,7 @@ export type ClientConfig = {
    * @type {string}
    * @default "cookie"
    **/
-  tokenStorage?: 'cookie' | 'localStorage';
+  tokenStorage?: "cookie" | "localStorage";
 
   /**
    * Specify the Authentication scheme.
@@ -100,6 +100,14 @@ export type ClientConfig = {
    * Configuration for the auth cookie.
    **/
   cookieAttributes?: CookieAttributes;
+
+  /**
+   * Determine if the `apollo-upload-client` HttpLink should be used instead of the standard Apollo HttpLink.
+   * This behavior is disabled by default.
+   * @type {boolean}
+   * @default false
+   */
+  useUploadLink?: boolean;
 };
 
 export interface NuxtApolloConfig<T = false> {
